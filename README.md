@@ -1,21 +1,24 @@
-# Blithe
+# BLITHE
 
-# Team members:
+# Team members
 
-Kasthuri A S Nair 	 AM.EN.U4CSE19328
+| Name                 | Roll Number      |
+| ----------------     | ---------------- |
+| Kasthuri A S Nair    | AM.EN.U4CSE19328 |
+| Hridya Nair S        | AM.EN.U4CSE19323 |
+| Riya Ratnakaran      | AM.EN.U4CSE19345 |
+| Niharika Padmanabhan | AM.EN.U4CSE19338 |
 
-Riya Ratnakaran 	AM.EN.U4CSE19345
+# Household Waste Management System
 
-Niharika Padmanabhan	AM.EN.U4CSE19338
-
-Hridya Nair S	AM.EN.U4CSE19323
-
+A desktop application connecting customers with waste collection agencies for easy disposal of household wastes.
+ 
 # Tools
 
-Programming Language: Python
+**Programming Language:** Python
 
-GUI: Tkinter
+**GUI:** Tkinter
 
-DBMS: PostgreSQL
+**DBMS:** PostgreSQL
 
-IDE: Visual Studio Code
+**IDE:** Visual Studio Code
