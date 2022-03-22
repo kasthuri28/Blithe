@@ -32,7 +32,7 @@ create table booking (
 	booking_time time
 );
 
-craete table admin (
+create table admin (
 	admin_id serial not null,
 	admin_name varcar(100) not null
 );
