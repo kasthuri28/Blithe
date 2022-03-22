@@ -20,7 +20,7 @@ create table collection_agency(
 	phone_number varchar(100) not null
 );
 
-ceate table login(
+create table login(
 	customer_id serial FOREIGN KEY REFERENCES customer(customer_id),
 	user_name varchar(100) not null,
 	pass_word varchar(100) not null
