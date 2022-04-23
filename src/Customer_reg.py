@@ -1,17 +1,18 @@
+from distutils.cmd import Command
 from os import scandir
 from tkinter import *
 from tkinter import messagebox
 from tkinter.tix import Balloon
 from turtle import width
 from PIL import Image,ImageTk
-from q1 import *
+import psycopg2
 import uuid
 
 
 
 class Cus_Register:
-    def __init__(self, sc):
-   
+    def cus_reg(self):
+        sc=Tk()
         self.sc=sc
         self.sc.title("Register Here")
         self.sc.geometry("2550x1000")
@@ -24,10 +25,26 @@ class Cus_Register:
         self.sc.config(bg="white")
 
         self.bgr=ImageTk.PhotoImage(file="bgr.png")
-        bgr=Label(self.sc,image=self.bgr).place(x=200,y=50,height=400)
+        bgr=Label(self.sc,image=self.bgr).place(x=200,y=80,height=400)
 
         frame1=Frame(self.sc,bg="light green")
-        frame1.place(x=680,y=50,width=1000,height=400)
+        frame1.place(x=680,y=80,width=1000,height=400)
+        
+     
+        h1 = Label(text = "Customer Registration",font=("times new roman",15,"bold"),bg='light grey',fg="dark olive green")
+        h1.pack(pady=50)
+        h1.place(x=810,y=40)
+
+        
+
+        image = Image.open('home.png')
+        rs_img = image.resize((40,40))
+        
+        self.but_home = ImageTk.PhotoImage(rs_img)
+        btn_r=Button(image=self.but_home,bg="light green",bd=0,cursor="hand2",command= self.home_p).place(x=10,y=10)
+
+       
+        
 
         
         f_name= Label(frame1,text="First Name",font=("times new roman",15,"bold"),bg="light green",fg="gray").place(x=50,y=10)
@@ -69,7 +86,7 @@ class Cus_Register:
                 self.psw_e.config(show="*")
 
         cp=Checkbutton(self.sc,text="Show Password",variable=v1,onvalue=1,offvalue=0,command=showp)
-        cp.place(x=750,y=430)
+        cp.place(x=750,y=460)
       
         con_psw= Label(frame1,text="Conform Password",font=("times new roman",15,"bold"),bg="light green",fg="gray").place(x=350,y=300)
         self.con_psw_e =Entry(frame1,font=("times new roman",15))
@@ -78,10 +95,19 @@ class Cus_Register:
         self.but_regimg = ImageTk.PhotoImage(file="reg_btn.png")
         btn_r=Button(frame1,image=self.but_regimg,bg="light green",bd=0,cursor="hand2",command= self.register_cus).place(x=700,y=310)
 
-        btn_L=Button(self.sc,text="Sign In",font=("times new roman",20),bd=0,bg="light green").place(x=1000,y=500,width=180)
+        btn_L=Button(self.sc,text="Sign In",font=("times new roman",20),bd=0,bg="light green",command=self.log_cus).place(x=1000,y=500,width=180)
         
         t1= Label(self.sc,text="Already Registered ? ",bd=0,fg="black",borderwidth=0,highlightthickness=0,font=("times new roman",15,"bold")).place(x=800,y=520)
    
+    def home_p(self):
+        self.sc.destroy()
+        import home
+    def log_cus(self):
+        self.sc.destroy()
+    
+        import Customer_login
+
+
         
     def register_cus(self):
         Sym=['@','#','$','%','&','*','!']
@@ -131,10 +157,12 @@ class Cus_Register:
 
             
             
-sc=Tk()
-o1=Cus_Register(sc)
 
-sc.mainloop()
+o1=Cus_Register()
+#o1.cus_reg()
+
+
+#o1.sc.mainloop()
 
 
 
